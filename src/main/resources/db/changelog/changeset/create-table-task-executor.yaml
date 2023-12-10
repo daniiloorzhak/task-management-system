@@ -1,0 +1,33 @@
+databaseChangeLog:
+  - changeSet:
+      author: "daniil"
+      id: "create-table-task-executor"
+      changes:
+        - createTable:
+            tableName: "task_executor"
+            columns:
+              - column:
+                  name: "task_id"
+                  type: "bigint"
+                  constraints:
+                    nullable: false
+              - column:
+                  name: "user_id"
+                  type: "bigint"
+                  constraints:
+                    nullable: false
+        - addForeignKeyConstraint:
+            baseTableName: "task_executor"
+            baseColumnNames: "task_id"
+            constraintName: "fk_task_executor_task_id"
+            referencedTableName: "tasks"
+            referencedColumnNames: "id"
+        - addForeignKeyConstraint:
+            baseTableName: "task_executor"
+            baseColumnNames: "user_id"
+            constraintName: "fk_task_executor_user_id"
+            referencedTableName: "users"
+            referencedColumnNames: "id"
+        - addPrimaryKey:
+            tableName: "task_executor"
+            columnNames: "task_id, user_id"

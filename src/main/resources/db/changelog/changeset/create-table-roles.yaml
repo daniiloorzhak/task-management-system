@@ -1,0 +1,24 @@
+databaseChangeLog:
+  - changeSet:
+      id: "create-table-roles"
+      author: "daniil"
+      changes:
+        - createTable:
+            tableName: "roles"
+            columns:
+              - column:
+                  name: "id"
+                  type: "bigint"
+                  autoIncrement: true
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+              - column:
+                  name: "name"
+                  type: "varchar(255)"
+                  constraints:
+                    nullable: false
+                    unique: true
+        - loadData:
+            tableName: "roles"
+            file: "classpath:db/changelog/changeset/roles-values.csv"

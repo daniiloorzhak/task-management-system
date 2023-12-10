@@ -1,0 +1,17 @@
+databaseChangeLog:
+  - include:
+      file: "classpath:db/changelog/changeset/create-table-users.yaml"
+  - include:
+      file: "classpath:db/changelog/changeset/create-table-roles.yaml"
+  - include:
+      file: "classpath:db/changelog/changeset/create-table-tasks.yaml"
+  - include:
+      file: "classpath:db/changelog/changeset/create-table-comment.yaml"
+  - include:
+      file: "classpath:db/changelog/changeset/create-table-user-role.yaml"
+  - include:
+      file: "classpath:db/changelog/changeset/create-table-task-executor.yaml"
+  - include:
+      file: "classpath:db/changelog/changeset/create-table-task-author.yaml"
+  - include:
+      file: "classpath:db/changelog/changeset/create-table-task-comment.yaml"
